@@ -1,6 +1,10 @@
 # Phase 3 Project Guidelines
 
-## Learning Goals
+## Client side GitHub repository
+
+- [Client side GitHub repository](https://github.com/ogada-otieno/client-server-portfolio-app)
+
+## Learning Goal
 
 - Build a web basic API with Sinatra and Active Record to support a React
   frontend
