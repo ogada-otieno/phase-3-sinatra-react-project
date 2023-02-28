@@ -1,5 +1,8 @@
 # Phase 3 Project Guidelines
 
+## Entity Relationship Diagram 
+![ERD](./assets/portfolio_app.png)
+
 ## Client side GitHub repository
 
 - [Client side GitHub repository](https://github.com/ogada-otieno/client-server-portfolio-app)
