@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_28_125437) do
+ActiveRecord::Schema.define(version: 2023_02_28_192711) do
 
   create_table "credentials", force: :cascade do |t|
     t.string "username"
@@ -27,16 +27,7 @@ ActiveRecord::Schema.define(version: 2023_02_28_125437) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.string "skill_1", default: "", null: false
-    t.string "skill_2", default: ""
-    t.string "skill_3", default: ""
-    t.string "skill_4", default: ""
-    t.string "skill_5", default: ""
-    t.string "skill_6", default: ""
-    t.string "skill_7", default: ""
-    t.string "skill_8", default: ""
-    t.string "skill_9", default: ""
-    t.string "skill_10", default: ""
+    t.string "skill"
   end
 
   create_table "users", force: :cascade do |t|
