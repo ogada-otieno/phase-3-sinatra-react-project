@@ -5,14 +5,7 @@ puts "🌱 Seeding tables..."
 # Seed your database here
 
 10.times do
-    # create projects with random data
-    project = Project.create(
-        title: Faker::Lorem.sentence(5),
-        description: Faker::Lorem.paragraph,
-        image_url: Faker::LoremFlickr.image
-
-    )
-
+    
     user = User.create(
         email: Faker::Internet.email,
         speciality: Faker::Lorem.word,
@@ -26,16 +19,26 @@ puts "🌱 Seeding tables..."
         education: Faker::Educator.degree
     )
 
+    # create projects with random data
+    project = Project.create(
+        title: Faker::Lorem.sentence(5),
+        description: Faker::Lorem.paragraph,
+        image_url: Faker::LoremFlickr.image,
+        user_id: user.id
+    )
+
     # create between 1 and 10 skills for each user
     rand(1..10).times do
         skill = Skill.create(
-        skill: Faker::Job.key_skill
+        skill: Faker::Job.key_skill,
+        user_id: user.id
     )
     end
 
     credential = Credential.create(
         password: Faker::Internet.password,
-        username: Faker::Internet.username(specifier: 5)
+        username: Faker::Internet.username(specifier: 5),
+        user_id: user.id
     )
 end
 
