@@ -54,7 +54,11 @@ class ApplicationController < Sinatra::Base
     skill.to_json
   end
 
-  
+  # A user should be able delete their skills.
+  delete '/delete-skill/:id/:id2' do
+    data = JSON.parse(request.body.read)
+    skill = User.find(params[:id]).skills
+  end
 
 
 
