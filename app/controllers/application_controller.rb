@@ -35,12 +35,19 @@ class ApplicationController < Sinatra::Base
 
   # # A user should be able to view their listed skills.
   get '/skills/:id' do
-    "created a new skill!"
     skill = User.find(params[:id]).skills
     skill.to_json
   end
 
+  # A user should be able add their skills.
+  # A user can have a maximum of 10 skills. - INCOMPLETE
+  post '/create-skill/:id' do
+    data = JSON.parse(request.body.read) 
+    skill = User.find(params[:id]).skills.create(data)
+    skill.to_json
+  end
 
+  
 
 
 
