@@ -26,6 +26,13 @@ class ApplicationController < Sinatra::Base
     project.to_json
   end
 
+  # # A user should be able to delete a project.
+  delete '/delete-project/:id/:id2' do
+    "deleted a project!"
+    project = User.find(params[:id]).projects
+    project.find(params[:id2]).destroy
+   end
+
   
 
 
