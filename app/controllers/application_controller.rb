@@ -1,13 +1,13 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
+  # a user should be able to view all their listed projects
+  get '/projects/:id' do
+    project = User.find(params[:id]).projects
+    project.to_json
   end
 
-  get '/start' do
-    "Start of something interesting!"
-  end
+
+
 
 end
