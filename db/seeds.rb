@@ -19,13 +19,15 @@ puts "🌱 Seeding tables..."
         education: Faker::Educator.degree
     )
 
-    # create projects with random data
-    project = Project.create(
+    # create between 1 and 5 projects with random data for each user
+    rand(1..5).times do
+        project = Project.create(
         title: Faker::Lorem.sentence(5),
         description: Faker::Lorem.paragraph,
         image_url: Faker::LoremFlickr.image,
         user_id: user.id
     )
+    end
 
     # create between 1 and 10 skills for each user
     rand(1..10).times do
@@ -38,6 +40,7 @@ puts "🌱 Seeding tables..."
     credential = Credential.create(
         password: Faker::Internet.password,
         username: Faker::Internet.username(specifier: 5),
+        email: user.email,
         user_id: user.id
     )
 end
