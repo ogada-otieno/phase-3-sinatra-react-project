@@ -58,6 +58,7 @@ class ApplicationController < Sinatra::Base
   delete '/delete-skill/:id/:id2' do
     data = JSON.parse(request.body.read)
     skill = User.find(params[:id]).skills
+    skill.find(params[:id2]).destroy
   end
 
 
