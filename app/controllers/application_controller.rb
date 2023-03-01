@@ -47,6 +47,13 @@ class ApplicationController < Sinatra::Base
     skill.to_json
   end
 
+  # A user should be able update their skills.
+  patch '/update-skill/:id/:id2' do
+    data = JSON.parse(request.body.read) 
+    skill = User.find(params[:id]).skills.find(params[:id2]).update(data)
+    skill.to_json
+  end
+
   
 
 
