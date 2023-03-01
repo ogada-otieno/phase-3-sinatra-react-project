@@ -33,7 +33,14 @@ class ApplicationController < Sinatra::Base
     project.find(params[:id2]).destroy
    end
 
-  
+  # # A user should be able to view their listed skills.
+  get '/skills/:id' do
+    "created a new skill!"
+    skill = User.find(params[:id]).skills
+    skill.to_json
+  end
+
+
 
 
 
