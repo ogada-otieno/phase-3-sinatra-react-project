@@ -18,6 +18,14 @@ class ApplicationController < Sinatra::Base
 
   end
 
+  # # A user should be able to update existing project data.
+  patch '/update-project/:id/:id2' do
+    data = JSON.parse(request.body.read) 
+    project = User.find(params[:id]).projects
+    project.find(params[:id2]).update(data)
+    project.to_json
+  end
+
   
 
 
