@@ -16,9 +16,6 @@ class ApplicationController < Sinatra::Base
       user_id: user.id
     )
     userCredential.to_json
-
-    # user.to_json
-    # userCredential.to_json
   end
   
   # a user should be able to view all their listed projects
