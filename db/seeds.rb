@@ -16,7 +16,8 @@ puts "🌱 Seeding tables..."
         date_of_birth: Faker::Date.birthday(min_age: 15, max_age: 65),
         locale: Faker::Address.country,
         address: Faker::Address.full_address,
-        education: Faker::Educator.degree
+        education: Faker::Educator.degree,
+        name: Faker::Name.name
     )
 
     # create between 1 and 5 projects with random data for each user

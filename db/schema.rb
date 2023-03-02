@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_28_200842) do
+ActiveRecord::Schema.define(version: 2023_03_02_043736) do
 
   create_table "credentials", force: :cascade do |t|
     t.string "username"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2023_02_28_200842) do
     t.string "locale"
     t.string "address"
     t.string "education"
+    t.string "name"
   end
 
 end
