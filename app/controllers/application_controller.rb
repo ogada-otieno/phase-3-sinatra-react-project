@@ -1,23 +1,6 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
-  # User registration
-  # during registration, the user email data is stored automatically in both the users and credentials table.
-  post '/register' do
-    user = User.create(
-      email: params[:email]
-    )
-    user.to_json
-
-    userCredential = Credential.create(
-      username: params[:username],
-      email: user.email,
-      password: params[:password],
-      user_id: user.id
-    )
-    userCredential.to_json
-  end
-  
   # a user should be able to view all their listed projects
   get '/projects/:id' do
     project = User.find(params[:id]).projects
