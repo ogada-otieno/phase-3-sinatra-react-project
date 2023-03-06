@@ -5,7 +5,7 @@
 
 ## Client side GitHub repository
 
-- [Client side GitHub repository](https://github.com/ogada-otieno/client-server-portfolio-app)
+- [Client side GitHub repository](https://github.com/ogada-otieno/client-side-portfolio-app)
 
 ## Learning Goal
 
