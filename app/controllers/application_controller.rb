@@ -55,12 +55,20 @@ class ApplicationController < Sinatra::Base
     skill.to_json
   end
 
-  # A user should be able add their skills.
-  # A user can have a maximum of 10 skills. - INCOMPLETE
+  # A user should be able add their skills. -DONE
+  # A user can have a maximum of 10 skills. - DONE
   post '/create-skill/:id' do
     data = JSON.parse(request.body.read) 
-    skill = User.find(params[:id]).skills.create(data)
-    skill.to_json
+
+    count_skills = User.find(params[:id]).skills.count
+
+    if count_skills < 10
+      skill = User.find(params[:id]).skills.create(data)
+      skill.to_json
+    else
+      {message: "You can only have 10 skills."}.to_json
+    end
+
   end
 
   # A user should be able update their skills.
