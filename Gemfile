@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+# Cross Origin Resource Sharing helper for Sinatra
+gem 'sinatra-cross_origin', '~> 0.4.0'
+
 # A DSL for quickly creating web applications
 # https://github.com/sinatra/sinatra
 gem "sinatra", "~> 2.1"
@@ -37,6 +40,8 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.18'
 # Require all files in a folder
 gem "require_all", "~> 3.0"
 
+# A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard.
+gem "jwt"
 
 # These gems will only be used when we are running the application locally
 group :development do

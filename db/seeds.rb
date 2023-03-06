@@ -4,7 +4,7 @@ puts "🌱 Seeding tables..."
 
 # Seed your database here
 
-10.times do
+5.times do
     
     user = User.create(
         email: Faker::Internet.email,
