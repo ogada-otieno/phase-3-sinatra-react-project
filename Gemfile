@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby File.read('.ruby-version').strip
+
 # Cross Origin Resource Sharing helper for Sinatra
 gem 'sinatra-cross_origin', '~> 0.4.0'
 
@@ -63,4 +65,5 @@ group :test do
   gem "rack-test", "~> 1.1"
   gem "rspec", "~> 3.10"
   gem "rspec-json_expectations", "~> 2.2"
+  gem 'faker'
 end
